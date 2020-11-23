@@ -119,15 +119,31 @@ main .alert svg {
 main .alert p {
   line-height: 27px;
   color: #ed5a5a;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
 }
 
 @media (max-width: 767px) {
   main .alert p {
     font-size: 12px;
     line-height: 166%;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+}
+
+@media (max-width: 991px) {
+  .scrolled {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .sm-scrolled {
+    width: auto;
+    padding: 0 40px;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    overflow: auto;
   }
 }
 

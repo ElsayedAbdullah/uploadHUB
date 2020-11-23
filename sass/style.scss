@@ -87,12 +87,28 @@ main {
     p {
       line-height: 27px;
       color: #ed5a5a;
-      flex: 1;
+
       @media #{$mobile} {
         font-size: 12px;
         line-height: 166%;
+        flex: 1;
       }
     }
+  }
+}
+
+@media #{$maxTab} {
+  .scrolled {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .sm-scrolled {
+    width: auto;
+    padding: 0 40px;
+    flex-wrap: nowrap;
+    overflow: auto;
   }
 }
 
