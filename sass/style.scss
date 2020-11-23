@@ -115,7 +115,7 @@ main {
 .steps {
   padding: 74px 0 142px;
   @media #{$mobile} {
-    padding: 39px 0 83px;
+    padding: 39px 0 45px;
   }
   .steps-boxes {
     display: flex;
@@ -134,6 +134,9 @@ main {
         padding: 40px 22px;
         &:not(:last-child) {
           margin: 0 0 30px 0;
+        }
+        &:last-child {
+          margin: 0 0 40px 0;
         }
       }
       .icon {
