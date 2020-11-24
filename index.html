@@ -4,97 +4,496 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>UploadHUB</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lato&family=Overpass:wght@600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Overpass:wght@600;700;800;900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <!-- Start Header -->
-    <header></header>
+    <div class="wrapper">
+      <div class="container overlay">
+        <header>
+          <nav class="navbar navbar-expand-lg sticky-top navbar-light">
+            <div class="container">
+              <a class="logo" href="index.html">
+                <span>upload<span>hub</span></span>
+              </a>
+              <div
+                class="toggler"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+              >
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+              </div>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav login-btns ml-auto">
+                  <li class="nav-item">
+                    <a href="#" class="">Make Money</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="login-btn">Login</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#">Register</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </header>
+        <div class="hero-content">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <div class="hero-left">
+                <h1 class="hero-title">Free Unlimited File Sharing Service</h1>
+                <p>
+                  Start sharing your file and earns money from them! Free and
+                  Unlimited!
+                </p>
+                <a href="#" class="primary--btn">Discover More</a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="hero-right">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <a
+                      class="nav-link active"
+                      id="uploadFiles-tab"
+                      data-toggle="tab"
+                      href="#uploadFiles"
+                      role="tab"
+                      aria-controls="uploadFiles"
+                      aria-selected="true"
+                      >Upload Files</a
+                    >
+                  </li>
+
+                  <li class="nav-item" role="presentation">
+                    <a
+                      class="nav-link"
+                      id="remoteUpload-tab"
+                      data-toggle="tab"
+                      href="#remoteUpload"
+                      role="tab"
+                      aria-controls="remoteUpload"
+                      aria-selected="false"
+                      >Remote Upload</a
+                    >
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <a
+                      class="nav-link"
+                      id="copyFiles-tab"
+                      data-toggle="tab"
+                      href="#copyFiles"
+                      role="tab"
+                      aria-controls="copyFiles"
+                      aria-selected="false"
+                      >Copy Files</a
+                    >
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <a
+                      class="nav-link"
+                      id="torrentLeach-tab"
+                      data-toggle="tab"
+                      href="#torrentLeach"
+                      role="tab"
+                      aria-controls="torrentLeach"
+                      aria-selected="false"
+                      >Torrent Leech</a
+                    >
+                  </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                  <div
+                    class="tab-pane fade show active"
+                    id="uploadFiles"
+                    role="tabpanel"
+                    aria-labelledby="uploadFiles-tab"
+                  >
+                    <form id="zdrop" class="fileuploader text-center">
+                      <div class="icon">
+                        <svg
+                          width="72"
+                          height="72"
+                          viewBox="0 0 72 72"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 51V57C12 58.5913 12.6321 60.1174 13.7574 61.2426C14.8826 62.3679 16.4087 63 18 63H54C55.5913 63 57.1174 62.3679 58.2426 61.2426C59.3679 60.1174 60 58.5913 60 57V51"
+                            stroke="#256EDA"
+                            stroke-width="4"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M21 27L36 12L51 27"
+                            stroke="#256EDA"
+                            stroke-width="4"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M36 12V48"
+                            stroke="#256EDA"
+                            stroke-width="4"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </div>
+                      <h3 class="title">Drag and drop files here or</h3>
+                      <a href="#!" id="browse" class="primary--btn">Browse</a>
+                    </form>
+
+                    <!-- Preview collection of uploaded documents -->
+                    <div class="preview-container">
+                      <div class="collection card" id="previews">
+                        <div
+                          class="collection-item clearhack valign-wrapper item-template"
+                          id="zdrop-template"
+                        >
+                          <div class="left pv zdrop-info" data-dz-thumbnail>
+                            <div>
+                              <span data-dz-name></span>
+                              <span data-dz-size></span>
+                            </div>
+                            <div class="progress">
+                              <div
+                                class="determinate"
+                                style="width: 0"
+                                data-dz-uploadprogress
+                              ></div>
+                            </div>
+                            <div class="dz-error-message">
+                              <span data-dz-errormessage></span>
+                            </div>
+                          </div>
+
+                          <div class="secondary-content actions">
+                            <a
+                              href="#!"
+                              data-dz-remove
+                              class="btn-floating ph red white-text waves-effect waves-light"
+                              ><i class="material-icons white-text">clear</i></a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="tab-pane fade"
+                    id="remoteUpload"
+                    role="tabpanel"
+                    aria-labelledby="remoteUpload-tab"
+                  >
+                    ...
+                  </div>
+                  <div
+                    class="tab-pane fade"
+                    id="copyFiles"
+                    role="tabpanel"
+                    aria-labelledby="copyFiles-tab"
+                  >
+                    ...
+                  </div>
+                  <div
+                    class="tab-pane fade"
+                    id="torrentLeach"
+                    role="tabpanel"
+                    aria-labelledby="torrentLeach-tab"
+                  >
+                    ...
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- End Header -->
 
-    <!-- Start Main -->
-    <main>
-      <div class="container">
-        <h1>Download FAST & FREE with uploadHUB Download Manager</h1>
-        <div class="alert">
+    <!-- Start Features -->
+    <section class="features">
+      <div class="features-content">
+        <svg
+          class="polygon"
+          width="640"
+          height="684"
+          viewBox="0 0 640 684"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M92.1605 285.207C81.9013 273.727 87.9165 255.446 102.988 252.301L610.598 146.382C625.669 143.237 638.493 157.587 633.681 172.212L471.604 664.774C466.792 679.399 447.953 683.33 437.694 671.85L92.1605 285.207Z"
+            fill="url(#paint0_linear)"
+            fill-opacity="0.03"
+          />
+          <defs>
+            <linearGradient
+              id="paint0_linear"
+              x1="69.0773"
+              y1="259.377"
+              x2="554.382"
+              y2="528.346"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#06172F" />
+              <stop offset="1" stop-color="#07249F" />
+            </linearGradient>
+          </defs>
+        </svg>
+
+        <div class="container">
+          <h2 class="features-title text-center">What we Offer</h2>
+          <p class="features-desc text-center">
+            Etiam auctor, turpis nec pellentesque ullamcorper, velit tellus
+            sodales tortor, eget tempus enim tortor a lacus. Duis lobortis
+            ornare erat at eleifend. Morbi eget cursus ligula.
+          </p>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="feat">
+                <div class="image">
+                  <img src="imgs/feat-1.png" alt="feat one img" />
+                </div>
+                <h3>Unlimited Storage</h3>
+                <p>
+                  You can upload as many files you want without the worry of
+                  space to run out.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="feat">
+                <div class="image">
+                  <img src="imgs/feat-2.png" alt="feat two img" />
+                </div>
+
+                <h3>Advanced Report</h3>
+                <p>
+                  With us you can check all downloads , views or profits in real
+                  time with detailed information.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="feat">
+                <div class="image">
+                  <img src="imgs/feat-3.png" alt="feat three img" />
+                </div>
+
+                <h3>Earn Money</h3>
+                <p>
+                  We will reward you for every single view and traffic you bring
+                  to us, aswell referrals and sales.
+                </p>
+              </div>
+            </div>
+          </div>
           <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
+            class="feat-1-shape"
+            width="168"
+            height="168"
+            viewBox="0 0 168 168"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              width="168"
+              height="168"
+              rx="15"
+              fill="#256EDA"
+              fill-opacity="0.04"
+            />
+          </svg>
+          <svg
+            class="feat-3-shape"
+            width="195"
+            height="186"
+            viewBox="0 0 195 186"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z"
-              stroke="#ED5A5A"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              d="M60.0847 44.1491C62.4821 28.9409 80.4438 22.031 92.4158 31.7114L180.827 103.199C192.799 112.879 189.802 131.889 175.433 137.417L69.3171 178.24C54.9477 183.768 39.9828 171.667 42.3802 156.459L60.0847 44.1491Z"
+              fill="url(#paint0_linear)"
+              fill-opacity="0.03"
             />
-            <path
-              d="M12 8V12"
-              stroke="#ED5A5A"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M12 16H12.01"
-              stroke="#ED5A5A"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
+            <defs>
+              <linearGradient
+                id="paint0_linear"
+                x1="65.4789"
+                y1="9.93064"
+                x2="96.2389"
+                y2="179.886"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#173C73" />
+                <stop offset="1" stop-color="#256EDA" />
+              </linearGradient>
+            </defs>
           </svg>
-          <p>
-            UploadHUB requires all users to install our Download Manager before
-            downloading files.
-          </p>
         </div>
       </div>
-    </main>
-    <!-- End Main -->
+    </section>
+    <!-- End Features -->
 
-    <!-- Start Steps -->
-    <section class="steps">
-      <div class="container scrolled">
-        <div class="steps-boxes sm-scrolled">
-          <div class="box">
-            <div class="box-content">
-              <div class="icon">
-                <img src="imgs/step-1.png" alt="step one" />
-              </div>
-              <h3>Step 1</h3>
-              <p>Download & Install our FREE Rapid Download Manager</p>
-              <a href="#" class="btn">Download Now</a>
+    <!-- Start Numbers -->
+    <section class="numbers">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h2 class="section-title">“Let our numbers speak to you”</h2>
+          </div>
+          <div class="col-md-6">
+            <p class="numbers-text">
+              Etiam auctor, turpis nec pellentesque ullamcorper, velit tellus
+              sodales tortor, eget tempus enim tortor a lacus. Duis lobortis
+              ornare erat at eleifend. Morbi eget cursus ligula.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="box box-1">
+              <h2>1450</h2>
+              <h4>Files Uploaded</h4>
             </div>
           </div>
-          <div class="box">
-            <div class="box-content">
-              <div class="icon">
-                <img src="imgs/step-2.png" alt="step one" />
-              </div>
-              <h3>Step 2</h3>
-              <p class="second-p">Visit Your UploadHUB Download Link</p>
+          <div class="col-md-4">
+            <div class="box box-2">
+              <h2>450</h2>
+              <h4>User Registered</h4>
+              <svg
+                width="92"
+                height="46"
+                viewBox="0 0 92 46"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M91 46C91 21.1472 70.8528 1 46 1C21.1472 1 1 21.1472 1 46"
+                  stroke="#7788D0"
+                  stroke-opacity="0.19"
+                />
+              </svg>
             </div>
           </div>
-          <div class="box">
-            <div class="box-content last">
-              <div class="icon">
-                <img src="imgs/step-3.png" alt="step one" />
-              </div>
-              <h3>Step 3</h3>
-              <p>Download Your Files RAPIDLY & For FREE!</p>
+          <div class="col-md-4">
+            <div class="box box-3">
+              <h2>750<span>TB</span></h2>
+              <h4>Storage Used</h4>
+              <svg
+                width="134"
+                height="129"
+                viewBox="0 0 134 129"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M37.0544 35.0894C39.4518 19.8812 57.4135 12.9713 69.3855 22.6516L120.06 63.6262C132.032 73.3065 129.035 92.3167 114.666 97.8446L53.8436 121.243C39.4742 126.771 24.5093 114.67 26.9067 99.4621L37.0544 35.0894Z"
+                  fill="url(#paint0_linear)"
+                  fill-opacity="0.1"
+                />
+                <defs>
+                  <linearGradient
+                    id="paint0_linear"
+                    x1="42.4486"
+                    y1="0.870882"
+                    x2="65.0506"
+                    y2="125.751"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#173C73" />
+                    <stop offset="1" stop-color="#B6C3FF" />
+                  </linearGradient>
+                </defs>
+              </svg>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- End Steps -->
+    <!-- End Numbers -->
+
+    <!-- Start Good -->
+    <section class="good text-center">
+      <div class="good-content">
+        <div class="container">
+          <h2>Sounds good, right?</h2>
+          <p>Why don’t you start now and try all our awesome features?</p>
+          <a href="#" class="primary--btn">Get Started</a>
+        </div>
+        <svg
+          class="shape-1"
+          width="90"
+          height="90"
+          viewBox="0 0 90 90"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle cx="45" cy="45" r="45" fill="#173C73" fill-opacity="0.08" />
+        </svg>
+        <svg
+          class="shape-2"
+          width="334"
+          height="317"
+          viewBox="0 0 334 317"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M111.932 63.5108C114.329 48.3026 132.291 41.3927 144.263 51.073L320.308 193.42C332.28 203.1 329.283 222.11 314.914 227.638L103.615 308.924C89.246 314.452 74.281 302.352 76.6784 287.144L111.932 63.5108Z"
+            fill="url(#paint0_linear)"
+            fill-opacity="0.1"
+          />
+          <defs>
+            <linearGradient
+              id="paint0_linear"
+              x1="117.326"
+              y1="29.2923"
+              x2="167.031"
+              y2="303.924"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#173C73" />
+              <stop offset="1" stop-color="#256EDA" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <svg
+          class="shape-3"
+          width="393"
+          height="341"
+          viewBox="0 0 393 341"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            x="307.926"
+            width="239.686"
+            height="329.353"
+            rx="20"
+            transform="rotate(69.2189 307.926 0)"
+            fill="#B6C3FF"
+            fill-opacity="0.07"
+          />
+        </svg>
+      </div>
+    </section>
+    <!-- End Good -->
 
     <!-- Start Footer -->
     <footer>
@@ -131,5 +530,10 @@
       </div>
     </footer>
     <!-- End Footer -->
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/dropzone.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>
