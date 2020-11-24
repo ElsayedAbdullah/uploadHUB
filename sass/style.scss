@@ -1,6 +1,8 @@
 $mobile: "(max-width: 767px)";
 $tablet: "(min-width: 768px) and (max-width: 991px)";
 $maxTab: "(max-width: 991px)";
+$betweentabdesk: "(min-width: 1000px) and (max-width: 1200px)";
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -10,6 +12,9 @@ $maxTab: "(max-width: 991px)";
 body {
   font-family: "Lato", sans-serif;
   font-size: 16px;
+  @media #{$tablet} {
+    background-color: #f9f9f9;
+  }
 }
 
 .container {
@@ -41,6 +46,7 @@ body {
   }
 }
 
+// Start Header Section
 header {
   height: 100px;
   background: #ffffff;
@@ -51,6 +57,7 @@ header {
   }
 }
 
+// Start Main Section
 main {
   h1 {
     font-family: "Overpass", sans-serif;
@@ -83,11 +90,18 @@ main {
     }
     svg {
       margin-right: 22px;
+      @media #{$tablet} {
+        margin-right: 12px;
+      }
     }
     p {
       line-height: 27px;
       color: #ed5a5a;
 
+      @media #{$tablet} {
+        font-size: 14px;
+        line-height: 166%;
+      }
       @media #{$mobile} {
         font-size: 12px;
         line-height: 166%;
@@ -97,23 +111,12 @@ main {
   }
 }
 
-@media #{$maxTab} {
-  .scrolled {
-    max-width: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  .sm-scrolled {
-    width: auto;
-    padding: 0 40px;
-    flex-wrap: nowrap;
-    overflow: auto;
-  }
-}
-
+// Start Steps Section
 .steps {
   padding: 74px 0 142px;
+  @media #{$tablet} {
+    padding: 50px 0 70px;
+  }
   @media #{$mobile} {
     padding: 39px 0 45px;
   }
@@ -123,15 +126,10 @@ main {
       flex-direction: column;
     }
     .box {
-      background: #ffffff;
-      box-shadow: 0px 0px 64px rgba(84, 84, 84, 0.05);
-      border-radius: 4px;
       margin: 8px;
       flex: 1;
-      padding: 53px 42px 47px;
-      text-align: center;
+      display: flex;
       @media #{$mobile} {
-        padding: 40px 22px;
         &:not(:last-child) {
           margin: 0 0 30px 0;
         }
@@ -139,6 +137,26 @@ main {
           margin: 0 0 40px 0;
         }
       }
+
+      .box-content {
+        background: #ffffff;
+        box-shadow: 0px 0px 64px rgba(84, 84, 84, 0.05);
+        border-radius: 4px;
+        padding: 53px 42px 47px;
+        text-align: center;
+        @media #{$betweentabdesk} {
+          padding: 45px 20px;
+        }
+        @media #{$tablet} {
+          padding: 45px 20px;
+          box-shadow: none;
+        }
+        @media #{$mobile} {
+          padding: 40px 22px;
+          width: 100%;
+        }
+      }
+
       .icon {
         width: 242px;
         height: 168px;
@@ -164,7 +182,7 @@ main {
         font-size: 28px;
         line-height: 34px;
         color: #163665;
-        @media #{$mobile} {
+        @media #{$maxTab} {
           font-size: 24px;
           line-height: 29px;
         }
@@ -174,7 +192,10 @@ main {
         line-height: 28px;
         color: rgba(51, 51, 51, 0.6);
         margin: 23px 0 39px;
-        @media #{$mobile} {
+        @media #{$betweentabdesk} {
+          font-size: 18px;
+        }
+        @media #{$maxTab} {
           font-size: 16px;
           line-height: 22px;
           margin: 16px 0 27px;
@@ -199,16 +220,46 @@ main {
       }
     }
   }
+  @media (min-width: 768px) and (max-width: 992px) {
+    .scrolled {
+      max-width: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    .sm-scrolled {
+      width: auto;
+      padding: 0 40px;
+      flex-wrap: nowrap;
+      overflow: auto;
+      .box {
+        max-width: 100%;
+        .box-content {
+          width: 280px;
+          &.last {
+            margin-right: 40px;
+          }
+        }
+      }
+    }
+  }
 }
 
+// Start Footer Section
 footer {
   padding: 79px 0 157px;
   background: #f0f4fb;
+  @media #{$tablet} {
+    padding: 60px 0 80px;
+  }
   @media #{$mobile} {
     padding: 55px 0;
   }
   .columns {
     display: flex;
+    @media #{$tablet} {
+      flex-wrap: wrap;
+    }
     @media #{$mobile} {
       flex-direction: column;
     }
@@ -266,6 +317,23 @@ footer {
               line-height: 24px;
             }
           }
+        }
+      }
+      @media #{$betweentabdesk} {
+        &.one {
+          flex: 1.5;
+        }
+      }
+      @media #{$tablet} {
+        flex: auto;
+        &.two,
+        &.three {
+          width: 50%;
+          margin-bottom: 55px;
+        }
+        &.one {
+          width: 100%;
+          order: 3;
         }
       }
       @media #{$mobile} {
