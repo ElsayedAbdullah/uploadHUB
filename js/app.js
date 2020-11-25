@@ -1,5 +1,6 @@
 $(document).ready(function () {
   initFileUploader("#zdrop");
+
   function initFileUploader(target) {
     var previewNode = document.querySelector("#zdrop-template");
     previewNode.id = "";
@@ -8,22 +9,23 @@ $(document).ready(function () {
 
     var zdrop = new Dropzone(target, {
       url: "upload.php",
-      maxFiles: 1,
-      maxFilesize: 30,
+      // maxFiles: 5,
+      // maxFilesize: 30,
       previewTemplate: previewTemplate,
       previewsContainer: "#previews",
-      clickable: "#browse"
+      clickable: "#browse, #add-more-btn"
     });
 
     zdrop.on("addedfile", function (file) {
-      $(".preview-container").css("visibility", "visible");
+      $(".preview-container").show();
+      $(".fileuploader").hide();
+      $("#add-more").show();
     });
-
-    zdrop.on("totaluploadprogress", function (progress) {
-      var progr = document.querySelector(".progress .determinate");
-      if (progr === undefined || progr === null) return;
-
-      progr.style.width = progress + "%";
+    zdrop.on("removedfile", function (file) {
+      if ($("#previews").children().length == 0) {
+        $(".fileuploader").show();
+        $("#add-more").hide();
+      }
     });
 
     zdrop.on("dragenter", function () {
@@ -36,6 +38,12 @@ $(document).ready(function () {
 
     zdrop.on("drop", function () {
       $(".fileuploader").removeClass("active");
+      $(".fileuploader").hide();
     });
   }
+
+  $(".select-folder").select2({
+    placeholder: "Select Folder",
+    allowClear: false
+  });
 });

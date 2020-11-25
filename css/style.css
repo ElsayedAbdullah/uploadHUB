@@ -191,6 +191,10 @@ header .navbar-nav .nav-item a.login-btn {
 
 .hero-content .hero-right {
   position: relative;
+  -webkit-box-shadow: 5px 9px 26px rgba(33, 83, 213, 0.2);
+          box-shadow: 5px 9px 26px rgba(33, 83, 213, 0.2);
+  border-radius: 15px;
+  overflow: hidden;
 }
 
 .hero-content .hero-right:before {
@@ -254,17 +258,341 @@ header .navbar-nav .nav-item a.login-btn {
   padding: 20px;
   border-radius: 0 0 15px 15px;
   min-height: 400px;
+  max-height: 400px;
+  overflow: auto;
 }
 
-.hero-content .hero-right .tab-content .tab-pane#uploadFiles {
-  border: 3px dashed rgba(37, 110, 218, 0.3);
-  border-radius: 15px;
+.hero-content .hero-right .tab-content::-webkit-scrollbar-thumb {
+  background: #256eda;
+  border-radius: 40px;
+}
+
+.hero-content .hero-right .tab-content::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+.hero-content .hero-right .tab-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.hero-content .hero-right .tab-content .tab-pane .copyFiles-content h4 {
+  font-size: 12px;
+  line-height: 104%;
+  color: #333333;
+}
+
+.hero-content .hero-right .tab-content .tab-pane .copyFiles-content h4 span {
+  font-size: 12px;
+  line-height: 104%;
+  float: right;
+  color: rgba(51, 51, 51, 0.6);
+}
+
+.hero-content .hero-right .tab-content .tab-pane .copyFiles-content textarea {
+  width: 100%;
+  min-height: 265px;
+  border: 0.2px solid #c6c7c7;
+  border-radius: 3px;
   padding: 20px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.hero-content .hero-right .tab-content .tab-pane .copyFiles-content textarea::-webkit-scrollbar-thumb {
+  background: rgba(179, 179, 179, 0.4);
+  border-radius: 40px;
+}
+
+.hero-content .hero-right .tab-content .tab-pane .copyFiles-content textarea::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+.hero-content .hero-right .tab-content .tab-pane .copyFiles-content textarea::-webkit-scrollbar {
+  width: 4px;
+}
+
+.hero-content .hero-right .tab-content .tab-pane .copyFiles-content textarea:hover {
+  -webkit-box-shadow: 3px 3px 9px #f3e7e7;
+          box-shadow: 3px 3px 9px #f3e7e7;
+}
+
+.hero-content .hero-right .tab-content .tab-pane .copyFiles-content textarea:focus {
+  outline: none;
+  border: 0.5px solid #96a1ac;
+}
+
+.hero-content .hero-right .tab-content .tab-pane .copyFiles-content .bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hero-content .hero-right .tab-content .tab-pane .copyFiles-content .bottom input {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  margin-right: 5px;
+  position: relative;
+  cursor: pointer;
+}
+
+.hero-content .hero-right .tab-content .tab-pane .copyFiles-content .bottom input:after {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  content: "";
+  width: 14px;
+  height: 14px;
+  z-index: 1;
+  border: 2px inset #000;
+  border-radius: 4px;
+}
+
+.hero-content .hero-right .tab-content .tab-pane .copyFiles-content .bottom label {
+  font-family: "Overpass", sans-serif;
+  font-size: 14px;
+  line-height: 104%;
+  color: #333333;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.hero-content .hero-right .tab-content .tab-pane .copyFiles-content .bottom label a {
+  font-weight: bold;
+  color: #256eda;
+}
+
+.hero-content .hero-right .tab-content .tab-pane .copyFiles-content .bottom > a {
+  padding: 17px 43px;
+  line-height: 1;
+  font-size: 14px;
+}
+
+.hero-content .hero-right .tab-content .tab-pane .form-group.last {
+  margin-bottom: 0;
+}
+
+.hero-content .hero-right .tab-content .tab-pane .form-group label {
+  font-family: "Overpass", sans-serif;
+  font-size: 12px;
+  line-height: 104%;
+  color: #333333;
+  display: block;
+}
+
+.hero-content .hero-right .tab-content .tab-pane .form-group input {
+  color: #333333;
+  padding: 11px 20px 16px;
+  line-height: 1;
+  width: 100%;
+  border: 0.2px solid #ccc;
+  border-radius: 3px;
+  outline: none;
+  min-height: 48px;
+}
+
+.hero-content .hero-right .tab-content .tab-pane .form-group input:focus {
+  border: 0.5px solid #96a1ac;
+}
+
+.hero-content .hero-right .tab-content .tab-pane .form-group input::-webkit-input-placeholder {
+  font-family: "Overpass";
+  font-size: 12px;
+  color: rgba(51, 51, 51, 0.4);
+}
+
+.hero-content .hero-right .tab-content .tab-pane .form-group input:-ms-input-placeholder {
+  font-family: "Overpass";
+  font-size: 12px;
+  color: rgba(51, 51, 51, 0.4);
+}
+
+.hero-content .hero-right .tab-content .tab-pane .form-group input::-ms-input-placeholder {
+  font-family: "Overpass";
+  font-size: 12px;
+  color: rgba(51, 51, 51, 0.4);
+}
+
+.hero-content .hero-right .tab-content .tab-pane .form-group input::placeholder {
+  font-family: "Overpass";
+  font-size: 12px;
+  color: rgba(51, 51, 51, 0.4);
+}
+
+.hero-content .hero-right .tab-content .tab-pane .form-group select {
+  width: 100%;
+  padding: 12px 20px;
+  outline: none;
+  border: 0.2px solid #ccc;
+  border-radius: 3px;
+}
+
+.hero-content .hero-right .tab-content .tab-pane#remoteUpload .remoteUpload-content textarea {
+  min-height: 87px;
+}
+
+.hero-content .hero-right .tab-content .tab-pane#copyFiles .copyFiles-content h4 {
+  font-size: 12px;
+  line-height: 104%;
+  color: #333333;
+}
+
+.hero-content .hero-right .tab-content .tab-pane#copyFiles .copyFiles-content h4 span {
+  font-size: 12px;
+  line-height: 104%;
+  float: right;
+  color: rgba(51, 51, 51, 0.6);
+}
+
+.hero-content .hero-right .tab-content .tab-pane#copyFiles .copyFiles-content textarea {
+  width: 100%;
+  min-height: 265px;
+  border: 0.2px solid #c6c7c7;
+  border-radius: 3px;
+  padding: 20px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.hero-content .hero-right .tab-content .tab-pane#copyFiles .copyFiles-content textarea::-webkit-scrollbar-thumb {
+  background: rgba(179, 179, 179, 0.4);
+  border-radius: 40px;
+}
+
+.hero-content .hero-right .tab-content .tab-pane#copyFiles .copyFiles-content textarea::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+.hero-content .hero-right .tab-content .tab-pane#copyFiles .copyFiles-content textarea::-webkit-scrollbar {
+  width: 4px;
+}
+
+.hero-content .hero-right .tab-content .tab-pane#copyFiles .copyFiles-content textarea:hover {
+  -webkit-box-shadow: 3px 3px 9px #f3e7e7;
+          box-shadow: 3px 3px 9px #f3e7e7;
+}
+
+.hero-content .hero-right .tab-content .tab-pane#copyFiles .copyFiles-content textarea:focus {
+  outline: none;
+  border: 0.5px solid #96a1ac;
+}
+
+.hero-content .hero-right .tab-content .tab-pane#copyFiles .copyFiles-content .bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hero-content .hero-right .tab-content .tab-pane#copyFiles .copyFiles-content .bottom input {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  margin-right: 5px;
+  position: relative;
+  cursor: pointer;
+}
+
+.hero-content .hero-right .tab-content .tab-pane#copyFiles .copyFiles-content .bottom input:after {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  content: "";
+  width: 14px;
+  height: 14px;
+  z-index: 1;
+  border: 2px inset #000;
+  border-radius: 4px;
+}
+
+.hero-content .hero-right .tab-content .tab-pane#copyFiles .copyFiles-content .bottom label {
+  font-family: "Overpass", sans-serif;
+  font-size: 14px;
+  line-height: 104%;
+  color: #333333;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.hero-content .hero-right .tab-content .tab-pane#copyFiles .copyFiles-content .bottom label a {
+  font-weight: bold;
+  color: #256eda;
+}
+
+.hero-content .hero-right .tab-content .tab-pane#copyFiles .copyFiles-content .bottom > a {
+  padding: 17px 43px;
+  line-height: 1;
+  font-size: 14px;
+}
+
+.hero-content .hero-right .tab-content .tab-pane#torrentLeach {
+  position: relative;
+  text-align: center;
+  min-height: 360px;
+}
+
+.hero-content .hero-right .tab-content .tab-pane#torrentLeach .torrentLeach-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.hero-content .hero-right .tab-content .tab-pane#torrentLeach svg {
+  position: absolute;
+  right: -85px;
+  top: -165px;
+}
+
+.hero-content .hero-right .tab-content .tab-pane#torrentLeach h3 {
+  font-size: 21px;
+  line-height: 119.7%;
+  color: #333333;
+  width: 360px;
+  margin-bottom: 20px;
+}
+
+.hero-content .hero-right .tab-content .tab-pane#torrentLeach a {
+  font-size: 14px;
+  padding: 9px 16px;
+  line-height: 1;
 }
 
 /********************************************************************/
 .fileuploader {
-  padding: 70px 0;
+  position: relative;
+  height: 350px;
+  border: 3px dashed rgba(37, 110, 218, 0.3);
+  border-radius: 15px;
+}
+
+.fileuploader .form-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding-bottom: 20px;
 }
 
 .fileuploader h3.title {
@@ -278,6 +606,7 @@ header .navbar-nav .nav-item a.login-btn {
 .fileuploader #browse {
   padding: 0px 19px;
   font-size: 14px;
+  border: 0;
 }
 
 .fileuploader.active {
@@ -286,59 +615,122 @@ header .navbar-nav .nav-item a.login-btn {
 
 /** Preview of collections of uploaded documents **/
 .preview-container {
+  display: none;
+}
+
+.preview-container .files-upload {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.preview-container .files-upload .left-side {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.preview-container .files-upload .left-side .icon {
+  margin-right: 20px;
   position: relative;
-  bottom: 0px;
-  width: 35%;
-  margin: auto;
-  top: 25px;
-  visibility: hidden;
+  top: -5px;
 }
 
-.preview-container #previews {
-  max-height: 400px;
-  overflow: auto;
+.preview-container .files-upload .left-side .info h4 {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 104%;
+  color: #333333;
+  margin-bottom: 0;
 }
 
-.preview-container #previews .zdrop-info {
-  width: 88%;
-  margin-right: 2%;
+.preview-container .files-upload .left-side .info span {
+  font-family: "Overpass", sans-serif;
+  font-size: 14px;
+  line-height: 104%;
+  color: rgba(51, 51, 51, 0.5);
+  display: inline-block;
 }
 
-.preview-container #previews.collection {
-  margin: 0;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+.preview-container .files-upload .right-side {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.preview-container .files-upload .right-side label {
+  font-family: "Overpass", sans-serif;
+  font-size: 14px;
+  line-height: 104%;
+  color: #333333;
+  margin-left: 10px;
+  margin-bottom: 0;
+}
+
+.preview-container .files-upload .right-side input {
+  position: relative;
+  top: -1px;
+}
+
+.preview-container .files-upload .right-side a {
+  background: #dfdfdf;
+  border-radius: 5px;
+  padding: 7px 8px;
+  margin-left: 25px;
+}
+
+.preview-container #add-more {
+  padding-bottom: 20px;
+}
+
+.preview-container .add-more-content {
+  text-align: center;
+  margin: 25px 0 35px;
+}
+
+.preview-container .add-more-content a {
+  font-family: "Overpass", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1;
+  text-align: center;
+  color: #333333;
+  padding: 10px 17px 6px;
+  border: 1px solid #256eda;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.preview-container a.upload {
+  font-family: "Overpass", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
+  color: #ffffff;
+  width: 100%;
+  height: 48px;
+  line-height: 48px;
+  padding: 0;
 }
 
 .preview-container #previews.collection .collection-item {
-  background-color: #e0e0e0;
-}
-
-.preview-container #previews.collection .actions a {
-  width: 1.5em;
-  height: 1.5em;
-  line-height: 1;
-}
-
-.preview-container #previews.collection .actions a i {
-  font-size: 1em;
-  line-height: 1.6;
-}
-
-.preview-container #previews.collection .dz-error-message {
-  font-size: 0.8em;
-  margin-top: -12px;
-  color: #f44336;
-}
-
-/*media queries*/
-@media only screen and (max-width: 601px) {
-  .fileuploader {
-    width: 100%;
-  }
-  .preview-container {
-    width: 100%;
-  }
+  background: #f7f7f7;
+  border-radius: 10px;
+  padding: 18px 18px 18px 25px;
+  margin-bottom: 10px;
 }
 
 /********************************************************************/
@@ -986,5 +1378,55 @@ footer .columns .column ul li a {
   footer .columns .column:not(:first-child) {
     margin-bottom: 44px;
   }
+}
+
+.select2-search--dropdown {
+  display: none;
+}
+
+.select2-container {
+  width: 100% !important;
+}
+
+.select2-container--default .select2-selection--single {
+  height: 100%;
+  outline: none;
+}
+
+.select2-container--default
+.select2-selection--single
+.select2-selection__rendered {
+  line-height: 46px;
+}
+
+.select2-container--default
+.select2-selection--single
+.select2-selection__arrow {
+  top: 55%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 11px;
+  background-image: url(../imgs/arrow-down.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.select2-container--default
+.select2-selection--single
+.select2-selection__arrow b {
+  display: none;
+}
+
+.select2-container--default
+.select2-selection--single
+.select2-selection__placeholder {
+  font-family: "Overpass", sans-serif;
+  font-size: 12px;
+  line-height: 1;
+  color: rgba(51, 51, 51, 0.4);
 }
 /*# sourceMappingURL=style.css.map */
