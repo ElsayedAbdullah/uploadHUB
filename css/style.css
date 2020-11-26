@@ -1483,7 +1483,7 @@ footer {
   padding: 80px 0 110px;
 }
 
-footer.download-manager {
+footer.footer-blue {
   background: #f0f4fb;
 }
 
@@ -1683,5 +1683,326 @@ footer .columns .column ul li a {
   font-size: 12px;
   line-height: 1;
   color: rgba(51, 51, 51, 0.4);
+}
+
+.header-wrapper {
+  background: url(../imgs/fileUpload-bg.png) center center no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 767px) {
+  .header-wrapper {
+    background-image: url(../imgs/fileUpload-bg-m.png);
+  }
+}
+
+.header-wrapper header .navbar .logo > span {
+  color: #fff;
+}
+
+.header-wrapper header .navbar .navbar-nav.nav-links li {
+  margin-left: 35px;
+}
+
+@media (max-width: 767px) {
+  .header-wrapper header .navbar .navbar-nav.nav-links li {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .header-wrapper header .navbar .navbar-nav.login-btns li a {
+    width: 150px;
+  }
+}
+
+.header-wrapper header .navbar .navbar-nav .nav-item a {
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.header-wrapper header .navbar .navbar-nav .nav-item a svg {
+  margin-right: 6px;
+  position: relative;
+  top: -2px;
+}
+
+@media (max-width: 767px) {
+  .header-wrapper header .navbar .navbar-nav .nav-item.make-money {
+    border-top: 1px solid rgba(44, 82, 198, 0.2);
+    border-bottom: 1px solid rgba(44, 82, 198, 0.2);
+    margin-left: 0;
+  }
+  .header-wrapper header .navbar .navbar-nav .nav-item.make-money:last-of-type {
+    border-top: 0;
+    border-bottom: 1px solid rgba(44, 82, 198, 0.2);
+  }
+}
+
+.header-wrapper header .navbar .navbar-nav .nav-item a.login-btn {
+  font-weight: 900;
+  font-size: 20px;
+  color: #256eda;
+  height: 53px;
+  line-height: 53px;
+  width: 144px;
+}
+
+.header-wrapper h2 {
+  padding: 60px 0 130px;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 119.7%;
+  margin-bottom: 0;
+  color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .header-wrapper h2 {
+    padding: 150px 0 390px;
+  }
+}
+
+.file-info {
+  margin-top: -65px;
+}
+
+@media (max-width: 767px) {
+  .file-info {
+    margin-top: -360px;
+  }
+}
+
+.file-info .download-info {
+  background: #f0f4fb;
+  border-radius: 10px;
+  padding: 35px 45px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 767px) {
+  .file-info .download-info {
+    border-radius: 10px 10px 0 0;
+    padding: 25px 20px;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+.file-info .download-info .desc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.file-info .download-info .desc svg {
+  margin-right: 25px;
+}
+
+@media (max-width: 767px) {
+  .file-info .download-info .desc svg {
+    margin-right: 15px;
+  }
+}
+
+.file-info .download-info .desc .name h4 {
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 104%;
+  color: #163665;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 767px) {
+  .file-info .download-info .desc .name h4 {
+    font-size: 21px;
+    line-height: 104%;
+    margin-bottom: 0;
+  }
+}
+
+.file-info .download-info .desc .name span {
+  color: rgba(22, 54, 101, 0.6);
+}
+
+@media (max-width: 767px) {
+  .file-info .download-info .desc .name span {
+    font-size: 12px;
+    line-height: 104%;
+  }
+}
+
+.file-info .download-info .download .copy-btn {
+  font-size: 16px;
+  padding: 12px 30px;
+}
+
+.file-info .download-info .download .copy-btn svg {
+  margin-right: 5px;
+}
+
+.file-info .download-info .download .download-btn {
+  width: 60px;
+  height: 55px;
+  line-height: 55px;
+  border-radius: 5px;
+  border: 1px solid #256eda;
+  display: inline-block;
+  text-align: center;
+  margin-left: 25px;
+}
+
+@media (max-width: 767px) {
+  .file-info .download-info .download .download-btn {
+    width: 47px;
+    height: 47px;
+    line-height: 47px;
+  }
+}
+
+.file-info .download-info .download .download-btn svg {
+  position: relative;
+  top: -3px;
+}
+
+@media (max-width: 767px) {
+  .file-info .download-info .download .download-btn svg {
+    width: 25px;
+  }
+}
+
+.file-info .download-info .copy-button {
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+  width: 100%;
+}
+
+.file-info .download-info .copy-button a {
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+}
+
+.download-links {
+  padding: 45px 0 110px;
+}
+
+@media (max-width: 767px) {
+  .download-links {
+    padding: 0 0 70px;
+  }
+}
+
+@media (max-width: 767px) {
+  .download-links .download-links-content {
+    background-color: #fff;
+    -webkit-box-shadow: 0px 4px 26px rgba(33, 83, 212, 0.2);
+            box-shadow: 0px 4px 26px rgba(33, 83, 212, 0.2);
+    border-radius: 0px 0px 10px 10px;
+    padding: 32px 22px 50px;
+  }
+}
+
+.download-links h2 {
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 119.7%;
+  color: #163665;
+  margin-bottom: 50px;
+}
+
+@media (max-width: 767px) {
+  .download-links h2 {
+    margin-bottom: 30px;
+    font-size: 16px;
+  }
+}
+
+.download-links .link {
+  margin-bottom: 32px;
+}
+
+.download-links .link h4 {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 104%;
+  color: #163665;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 767px) {
+  .download-links .link h4 {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+}
+
+.download-links .link div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.download-links .link div input {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 19px 20px;
+  font-family: "Overpass", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 104%;
+  background: #ffffff;
+  border: 0.2px solid #ccc;
+  border-radius: 5px;
+  color: #000000;
+  outline: none;
+}
+
+@media (max-width: 767px) {
+  .download-links .link div input {
+    font-size: 12px;
+    padding: 17px 16px;
+  }
+}
+
+.download-links .link div button {
+  width: 186px;
+  height: 55px;
+  line-height: 55px;
+  border: 1px solid #256eda;
+  border-radius: 5px;
+  font-family: "Overpass", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  color: #163665;
+  margin-left: 25px;
+  background-color: #fff;
+  outline: none;
+}
+
+@media (max-width: 767px) {
+  .download-links .link div button {
+    margin-left: 12px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

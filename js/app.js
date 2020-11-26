@@ -5,6 +5,11 @@ $(document).ready(function () {
     } else {
       $("header .navbar").removeClass("nav-fixed");
     }
+    if ($(this).scrollTop() >= 33 && $(this).width() > 992) {
+      $("body").css("padding-top", "108px");
+    } else {
+      $("body").css("padding-top", "0");
+    }
   });
 
   $(".navbar .toggler").click(function (event) {
@@ -33,58 +38,40 @@ $(document).ready(function () {
     e.stopPropagation();
   });
 
+  // tooltip in credentials in dashboard page
+  $(".link button").on("click", function () {
+    $(this).prev("input").select();
+    document.execCommand("copy");
+    if ($(window).width() > 768) {
+      $(this).text("Copied!");
+    }
+  });
+
+  $(".link button").on("mouseleave", function () {
+    if ($(window).width() > 767) {
+      $(this).text("Copy");
+    }
+  });
+
+  function myFunction() {
+    var copyText = document.getElementById("myInput");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    document.execCommand("copy");
+
+    var tooltip = document.getElementById("myTooltip");
+    tooltip.innerHTML = "Copied: " + copyText.value;
+  }
+
+  function outFunc() {
+    var tooltip = document.getElementById("myTooltip");
+    tooltip.innerHTML = "Copy to clipboard";
+  }
+
   // $(".faq .dropdown-menu li").on("click", function () {
   //   $(this).addClass("active").siblings().removeClass("active");
   //   $(".tab-content > div").hide();
   //   $(".faq .dropdown .btn").text($(this).text());
   //   $($(this).data("content")).fadeIn();
   // });
-
-  initFileUploader("#zdrop");
-
-  function initFileUploader(target) {
-    var previewNode = document.querySelector("#zdrop-template");
-    previewNode.id = "";
-    var previewTemplate = previewNode.parentNode.innerHTML;
-    previewNode.parentNode.removeChild(previewNode);
-
-    var zdrop = new Dropzone(target, {
-      url: "upload.php",
-      // maxFiles: 5,
-      // maxFilesize: 30,
-      previewTemplate: previewTemplate,
-      previewsContainer: "#previews",
-      clickable: "#browse, #add-more-btn"
-    });
-
-    zdrop.on("addedfile", function (file) {
-      $(".preview-container").show();
-      $(".fileuploader").hide();
-      $("#add-more").show();
-    });
-    zdrop.on("removedfile", function (file) {
-      if ($("#previews").children().length == 0) {
-        $(".fileuploader").show();
-        $("#add-more").hide();
-      }
-    });
-
-    zdrop.on("dragenter", function () {
-      $(".fileuploader").addClass("active");
-    });
-
-    zdrop.on("dragleave", function () {
-      $(".fileuploader").removeClass("active");
-    });
-
-    zdrop.on("drop", function () {
-      $(".fileuploader").removeClass("active");
-      $(".fileuploader").hide();
-    });
-  }
-
-  $(".select-folder").select2({
-    placeholder: "Select Folder",
-    allowClear: false
-  });
 });
