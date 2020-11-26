@@ -20,6 +20,24 @@ body {
   }
 }
 
+body.overlay {
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+body.overlay:after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(#000, 0.5);
+  z-index: 1;
+  margin: 0;
+  overflow: hidden;
+}
+
 a {
   text-decoration: none !important;
 }
@@ -77,13 +95,18 @@ h4 {
 }
 
 .logo {
-  span {
+  > span {
     font-family: "Overpass", sans-serif;
     font-weight: bold;
     font-size: 37px;
     line-height: 130.2%;
     letter-spacing: -0.06em;
     color: #163665;
+    @media #{$mobile} {
+      font-size: 25px;
+      line-height: 130.2%;
+      color: #fff;
+    }
     span {
       font-weight: 900;
       text-transform: uppercase;
@@ -97,6 +120,10 @@ h4 {
   position: relative;
   background: #fcfcfc;
   overflow: hidden;
+  @media #{$mobile} {
+    background: none;
+    overflow: visible;
+  }
   &:after {
     content: "";
     position: absolute;
@@ -111,9 +138,13 @@ h4 {
       $primarColor 0%,
       #06172f 100%
     );
+    @media #{$mobile} {
+      display: none;
+    }
   }
   .container.overlay {
     position: relative;
+    padding: 0;
     &:after {
       position: absolute;
       content: "";
@@ -124,6 +155,16 @@ h4 {
       height: 100%;
       z-index: 0;
       background: #06172f;
+      @media #{$mobile} {
+        height: auto;
+        bottom: 160px;
+        right: 0;
+        background: radial-gradient(
+          84.85% 84.85% at 121.56% -22.78%,
+          $primarColor 0%,
+          #06172f 100%
+        );
+      }
     }
   }
 }
@@ -132,12 +173,102 @@ header {
   .navbar {
     padding: 30px 0;
     .container {
-      padding: 0;
+      padding: 0 15px;
+      @media #{$maxTab} {
+        padding: 0 25px;
+      }
+    }
+    @media #{$maxTab} {
+      padding: 28px 0;
+      position: absolute;
+      width: 100%;
+    }
+
+    .navbar-collapse {
+      flex: none;
+      @media #{$maxTab} {
+        padding-top: 20px;
+        flex-grow: 1;
+      }
+    }
+    &.navbar-show-mobile {
+      background-color: #0f1324 !important;
+      position: fixed !important;
+    }
+    &.nav-fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(11, 12, 34, 0.9);
+      background-blend-mode: darken;
+      animation: q 0.65s cubic-bezier(0.23, 1, 0.32, 1) both;
+      .logo {
+        > span {
+          color: #fff;
+        }
+      }
+      @media #{$maxTab} {
+        background: #0b0c22;
+        background-blend-mode: darken;
+        box-shadow: 0px 8px 14px rgba(0, 0, 0, 0.25);
+      }
+
+      @keyframes q {
+        0% {
+          transform: translateY(-100%);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+  @media #{$maxTab} {
+    .toggler {
+      display: inline-block;
+      cursor: pointer;
+      padding: 5px;
+      .bar1,
+      .bar2,
+      .bar3 {
+        width: 20px;
+        height: 2px;
+        background-color: #fff;
+        margin: 4px 0;
+        transition: 0.4s;
+      }
+    }
+    .change .bar1 {
+      transform: rotate(-45deg) translate(-3px, 5px);
+    }
+    .change .bar2 {
+      opacity: 0;
+    }
+
+    .change .bar3 {
+      transform: rotate(45deg) translate(-3px, -6px);
     }
   }
   .navbar-nav {
     align-items: center;
+    &.login-btns {
+      @media #{$maxTab} {
+        flex-direction: row;
+        margin-top: 25px;
+        justify-content: space-between;
+      }
+    }
     .nav-item {
+      &.make-money {
+        @media #{$maxTab} {
+          padding: 15px 0px;
+          border-top: 1px solid rgba(44, 82, 198, 0.2);
+          border-bottom: 1px solid rgba(44, 82, 198, 0.2);
+          display: block;
+          width: 100%;
+        }
+      }
       a {
         font-family: "Overpass", sans-serif;
         font-weight: bold;
@@ -145,16 +276,33 @@ header {
         line-height: 31px;
         color: rgba(255, 255, 255, 0.8);
         display: inline-block;
+
         &.login-btn {
           margin-right: 33px;
           margin-left: 45px;
           background: #ffffff;
+          border: 1px solid #fff;
           border-radius: 5px;
           height: 45px;
           line-height: 45px;
           width: 115px;
           color: $primarColor;
           text-align: center;
+        }
+        @media #{$maxTab} {
+          &.register,
+          &.login-btn {
+            height: 50px;
+            line-height: 50px;
+            width: 135px;
+            font-size: 18px;
+            margin: 0;
+          }
+          &.register {
+            border: 1px solid #fff;
+            text-align: center;
+            border-radius: 5px;
+          }
         }
       }
     }
@@ -168,16 +316,53 @@ header {
   padding-bottom: 150px;
   position: relative;
   z-index: 1;
+  @media #{$maxTab} {
+    padding-bottom: 0;
+  }
+  @media #{$mobile} {
+    padding-top: 190px;
+  }
+  .container {
+    padding: 0 15px;
+    @media #{$maxTab} {
+      padding: 0 25px;
+    }
+  }
 
   .hero-left {
+    @media #{$mobile} {
+      margin-bottom: 60px;
+    }
     h1.hero-title {
       font-weight: bold;
       font-size: 70px;
       line-height: 104%;
+      @media #{$mobile} {
+        font-size: 42px;
+        line-height: 104%;
+        color: #fff;
+      }
     }
     p {
       max-width: 360px;
       margin: 20px 0 50px;
+      @media #{$mobile} {
+        font-size: 14px;
+        line-height: 166%;
+        color: #fff;
+      }
+    }
+    .discover-more {
+      @media #{$mobile} {
+        background: #fff;
+        width: 150px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 18px;
+        color: #333;
+        padding: 0;
+        text-align: center;
+      }
     }
   }
   .hero-right {

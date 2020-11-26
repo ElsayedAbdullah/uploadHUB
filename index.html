@@ -33,15 +33,17 @@
               </div>
 
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav login-btns ml-auto">
-                  <li class="nav-item">
+                <ul class="navbar-nav">
+                  <li class="nav-item make-money">
                     <a href="#" class="">Make Money</a>
                   </li>
+                </ul>
+                <ul class="navbar-nav login-btns">
                   <li class="nav-item">
                     <a href="#" class="login-btn">Login</a>
                   </li>
                   <li class="nav-item">
-                    <a href="#">Register</a>
+                    <a href="#" class="register">Register</a>
                   </li>
                 </ul>
               </div>
@@ -49,214 +51,276 @@
           </nav>
         </header>
         <div class="hero-content">
-          <div class="row align-items-center">
-            <div class="col-md-6">
-              <div class="hero-left">
-                <h1 class="hero-title">Free Unlimited File Sharing Service</h1>
-                <p>
-                  Start sharing your file and earns money from them! Free and
-                  Unlimited!
-                </p>
-                <a href="#" class="primary--btn">Discover More</a>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="hero-right">
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                  <li class="nav-item" role="presentation">
-                    <a
-                      class="nav-link active"
-                      id="uploadFiles-tab"
-                      data-toggle="tab"
-                      href="#uploadFiles"
-                      role="tab"
-                      aria-controls="uploadFiles"
-                      aria-selected="true"
-                      >Upload Files</a
-                    >
-                  </li>
-
-                  <li class="nav-item" role="presentation">
-                    <a
-                      class="nav-link"
-                      id="remoteUpload-tab"
-                      data-toggle="tab"
-                      href="#remoteUpload"
-                      role="tab"
-                      aria-controls="remoteUpload"
-                      aria-selected="false"
-                      >Remote Upload</a
-                    >
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <a
-                      class="nav-link"
-                      id="copyFiles-tab"
-                      data-toggle="tab"
-                      href="#copyFiles"
-                      role="tab"
-                      aria-controls="copyFiles"
-                      aria-selected="false"
-                      >Copy Files</a
-                    >
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <a
-                      class="nav-link"
-                      id="torrentLeach-tab"
-                      data-toggle="tab"
-                      href="#torrentLeach"
-                      role="tab"
-                      aria-controls="torrentLeach"
-                      aria-selected="false"
-                      >Torrent Leech</a
-                    >
-                  </li>
-                </ul>
-                <div class="tab-content" id="myTabContent">
-                  <div
-                    class="tab-pane fade show active"
-                    id="uploadFiles"
-                    role="tabpanel"
-                    aria-labelledby="uploadFiles-tab"
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-md-6">
+                <div class="hero-left">
+                  <h1 class="hero-title">
+                    Free Unlimited File Sharing Service
+                  </h1>
+                  <p>
+                    Start sharing your file and earns money from them! Free and
+                    Unlimited!
+                  </p>
+                  <a href="#" class="discover-more primary--btn"
+                    >Discover More</a
                   >
-                    <form
-                      id="zdrop"
-                      action="upload.php"
-                      class="fileuploader text-center"
-                    >
-                      <div class="form-content">
-                        <div class="icon">
-                          <svg
-                            width="72"
-                            height="72"
-                            viewBox="0 0 72 72"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M12 51V57C12 58.5913 12.6321 60.1174 13.7574 61.2426C14.8826 62.3679 16.4087 63 18 63H54C55.5913 63 57.1174 62.3679 58.2426 61.2426C59.3679 60.1174 60 58.5913 60 57V51"
-                              stroke="#256EDA"
-                              stroke-width="4"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            />
-                            <path
-                              d="M21 27L36 12L51 27"
-                              stroke="#256EDA"
-                              stroke-width="4"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            />
-                            <path
-                              d="M36 12V48"
-                              stroke="#256EDA"
-                              stroke-width="4"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            />
-                          </svg>
-                        </div>
-                        <h3 class="title">Drag and drop files here or</h3>
-                        <a href="#!" id="browse" class="primary--btn">Browse</a>
-                      </div>
-                    </form>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="hero-right">
+                  <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <a
+                        class="nav-link active"
+                        id="uploadFiles-tab"
+                        data-toggle="tab"
+                        href="#uploadFiles"
+                        role="tab"
+                        aria-controls="uploadFiles"
+                        aria-selected="true"
+                        >Upload Files</a
+                      >
+                    </li>
 
-                    <!-- Preview collection of uploaded documents -->
-                    <div class="preview-container">
-                      <div class="collection" id="previews">
-                        <div
-                          class="collection-item clearhack valign-wrapper item-template"
-                          id="zdrop-template"
-                        >
-                          <div class="files-upload" data-dz-thumbnail>
-                            <div class="left-side">
-                              <div class="icon">
-                                <svg
-                                  width="24"
-                                  height="24"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M14 3V7C14 7.26522 14.1054 7.51957 14.2929 7.70711C14.4804 7.89464 14.7348 8 15 8H19"
-                                    stroke="#333333"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                  />
-                                  <path
-                                    d="M17 21H7C6.46957 21 5.96086 20.7893 5.58579 20.4142C5.21071 20.0391 5 19.5304 5 19V5C5 4.46957 5.21071 3.96086 5.58579 3.58579C5.96086 3.21071 6.46957 3 7 3H14L19 8V19C19 19.5304 18.7893 20.0391 18.4142 20.4142C18.0391 20.7893 17.5304 21 17 21Z"
-                                    stroke="#333333"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                  />
-                                </svg>
+                    <li class="nav-item" role="presentation">
+                      <a
+                        class="nav-link"
+                        id="remoteUpload-tab"
+                        data-toggle="tab"
+                        href="#remoteUpload"
+                        role="tab"
+                        aria-controls="remoteUpload"
+                        aria-selected="false"
+                        >Remote Upload</a
+                      >
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <a
+                        class="nav-link"
+                        id="copyFiles-tab"
+                        data-toggle="tab"
+                        href="#copyFiles"
+                        role="tab"
+                        aria-controls="copyFiles"
+                        aria-selected="false"
+                        >Copy Files</a
+                      >
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <a
+                        class="nav-link"
+                        id="torrentLeach-tab"
+                        data-toggle="tab"
+                        href="#torrentLeach"
+                        role="tab"
+                        aria-controls="torrentLeach"
+                        aria-selected="false"
+                        >Torrent Leech</a
+                      >
+                    </li>
+                  </ul>
+                  <div class="tab-content" id="myTabContent">
+                    <div
+                      class="tab-pane fade show active"
+                      id="uploadFiles"
+                      role="tabpanel"
+                      aria-labelledby="uploadFiles-tab"
+                    >
+                      <form
+                        id="zdrop"
+                        action="upload.php"
+                        class="fileuploader text-center"
+                      >
+                        <div class="form-content">
+                          <div class="icon">
+                            <svg
+                              width="72"
+                              height="72"
+                              viewBox="0 0 72 72"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M12 51V57C12 58.5913 12.6321 60.1174 13.7574 61.2426C14.8826 62.3679 16.4087 63 18 63H54C55.5913 63 57.1174 62.3679 58.2426 61.2426C59.3679 60.1174 60 58.5913 60 57V51"
+                                stroke="#256EDA"
+                                stroke-width="4"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                              <path
+                                d="M21 27L36 12L51 27"
+                                stroke="#256EDA"
+                                stroke-width="4"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                              <path
+                                d="M36 12V48"
+                                stroke="#256EDA"
+                                stroke-width="4"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                            </svg>
+                          </div>
+                          <h3 class="title">Drag and drop files here or</h3>
+                          <a href="#!" id="browse" class="primary--btn"
+                            >Browse</a
+                          >
+                        </div>
+                      </form>
+
+                      <!-- Preview collection of uploaded documents -->
+                      <div class="preview-container">
+                        <div class="collection" id="previews">
+                          <div
+                            class="collection-item clearhack valign-wrapper item-template"
+                            id="zdrop-template"
+                          >
+                            <div class="files-upload" data-dz-thumbnail>
+                              <div class="left-side">
+                                <div class="icon">
+                                  <svg
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M14 3V7C14 7.26522 14.1054 7.51957 14.2929 7.70711C14.4804 7.89464 14.7348 8 15 8H19"
+                                      stroke="#333333"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                    <path
+                                      d="M17 21H7C6.46957 21 5.96086 20.7893 5.58579 20.4142C5.21071 20.0391 5 19.5304 5 19V5C5 4.46957 5.21071 3.96086 5.58579 3.58579C5.96086 3.21071 6.46957 3 7 3H14L19 8V19C19 19.5304 18.7893 20.0391 18.4142 20.4142C18.0391 20.7893 17.5304 21 17 21Z"
+                                      stroke="#333333"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                  </svg>
+                                </div>
+                                <div class="info">
+                                  <h4 data-dz-name></h4>
+                                  <span data-dz-size></span>
+                                </div>
                               </div>
-                              <div class="info">
-                                <h4 data-dz-name></h4>
-                                <span data-dz-size></span>
+                              <div class="right-side">
+                                <input type="checkbox" id="public" />
+                                <label for="public">Public</label>
+                                <a href="#!" data-dz-remove>
+                                  <svg
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path
+                                      d="M4 7H20"
+                                      stroke="#333333"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                    <path
+                                      d="M10 11V17"
+                                      stroke="#333333"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                    <path
+                                      d="M14 11V17"
+                                      stroke="#333333"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                    <path
+                                      d="M5 7L6 19C6 19.5304 6.21071 20.0391 6.58579 20.4142C6.96086 20.7893 7.46957 21 8 21H16C16.5304 21 17.0391 20.7893 17.4142 20.4142C17.7893 20.0391 18 19.5304 18 19L19 7"
+                                      stroke="#333333"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                    <path
+                                      d="M9 7V4C9 3.73478 9.10536 3.48043 9.29289 3.29289C9.48043 3.10536 9.73478 3 10 3H14C14.2652 3 14.5196 3.10536 14.7071 3.29289C14.8946 3.48043 15 3.73478 15 4V7"
+                                      stroke="#333333"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    />
+                                  </svg>
+                                </a>
                               </div>
                             </div>
-                            <div class="right-side">
-                              <input type="checkbox" id="public" />
-                              <label for="public">Public</label>
-                              <a href="#!" data-dz-remove>
-                                <svg
-                                  width="24"
-                                  height="24"
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M4 7H20"
-                                    stroke="#333333"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                  />
-                                  <path
-                                    d="M10 11V17"
-                                    stroke="#333333"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                  />
-                                  <path
-                                    d="M14 11V17"
-                                    stroke="#333333"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                  />
-                                  <path
-                                    d="M5 7L6 19C6 19.5304 6.21071 20.0391 6.58579 20.4142C6.96086 20.7893 7.46957 21 8 21H16C16.5304 21 17.0391 20.7893 17.4142 20.4142C17.7893 20.0391 18 19.5304 18 19L19 7"
-                                    stroke="#333333"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                  />
-                                  <path
-                                    d="M9 7V4C9 3.73478 9.10536 3.48043 9.29289 3.29289C9.48043 3.10536 9.73478 3 10 3H14C14.2652 3 14.5196 3.10536 14.7071 3.29289C14.8946 3.48043 15 3.73478 15 4V7"
-                                    stroke="#333333"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                  />
-                                </svg>
-                              </a>
+                          </div>
+                        </div>
+                        <div id="add-more">
+                          <div class="add-more-content">
+                            <a href="#!" id="add-more-btn">Add More</a>
+                          </div>
+                          <div class="row align-items-end">
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label>Recipient’s Email</label>
+                                <input
+                                  type="email"
+                                  placeholder="Enter recipient email address..."
+                                />
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label>Link Password</label>
+                                <input
+                                  type="password"
+                                  placeholder="Enter password..."
+                                />
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="form-group last">
+                                <label>Upload to folder</label>
+                                <select class="select-folder">
+                                  <option value=""></option>
+                                  <option value="1">One</option>
+                                  <option value="2">Two</option>
+                                  <option value="3">Three</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <a href="#" class="upload primary--btn"
+                                >Start Upload</a
+                              >
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div id="add-more">
-                        <div class="add-more-content">
-                          <a href="#!" id="add-more-btn">Add More</a>
-                        </div>
-                        <div class="row align-items-end">
+                    </div>
+                    <div
+                      class="tab-pane fade"
+                      id="remoteUpload"
+                      role="tabpanel"
+                      aria-labelledby="remoteUpload-tab"
+                    >
+                      <div class="remoteUpload-content">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label>Proxy URL</label>
+                              <input
+                                type="text"
+                                placeholder="Enter Proxy URL..."
+                              />
+                            </div>
+                          </div>
                           <div class="col-md-6">
                             <div class="form-group">
                               <label>Recipient’s Email</label>
@@ -276,7 +340,7 @@
                             </div>
                           </div>
                           <div class="col-md-6">
-                            <div class="form-group last">
+                            <div class="form-group">
                               <label>Upload to folder</label>
                               <select class="select-folder">
                                 <option value=""></option>
@@ -286,62 +350,32 @@
                               </select>
                             </div>
                           </div>
-                          <div class="col-md-6">
-                            <a href="#" class="upload primary--btn"
-                              >Start Upload</a
-                            >
+                        </div>
+                        <div class="copyFiles-content">
+                          <h4>
+                            You can enter up to 200 URLs, one URL per line
+                            <span>Max file size 1,000,000 MB</span>
+                          </h4>
+                          <textarea></textarea>
+                          <div class="bottom">
+                            <div>
+                              <input type="checkbox" id="tos" />
+                              <label for="tos"
+                                >I have read and agree to the
+                                <a href="#">TOS</a></label
+                              >
+                            </div>
+                            <a href="#" class="primary--btn">Start Upload</a>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div
-                    class="tab-pane fade"
-                    id="remoteUpload"
-                    role="tabpanel"
-                    aria-labelledby="remoteUpload-tab"
-                  >
-                    <div class="remoteUpload-content">
-                      <div class="row">
-                        <div class="col-md-6">
-                          <div class="form-group">
-                            <label>Proxy URL</label>
-                            <input
-                              type="text"
-                              placeholder="Enter Proxy URL..."
-                            />
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="form-group">
-                            <label>Recipient’s Email</label>
-                            <input
-                              type="email"
-                              placeholder="Enter recipient email address..."
-                            />
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="form-group">
-                            <label>Link Password</label>
-                            <input
-                              type="password"
-                              placeholder="Enter password..."
-                            />
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="form-group">
-                            <label>Upload to folder</label>
-                            <select class="select-folder">
-                              <option value=""></option>
-                              <option value="1">One</option>
-                              <option value="2">Two</option>
-                              <option value="3">Three</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
+                    <div
+                      class="tab-pane fade"
+                      id="copyFiles"
+                      role="tabpanel"
+                      aria-labelledby="copyFiles-tab"
+                    >
                       <div class="copyFiles-content">
                         <h4>
                           You can enter up to 200 URLs, one URL per line
@@ -360,69 +394,45 @@
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div
-                    class="tab-pane fade"
-                    id="copyFiles"
-                    role="tabpanel"
-                    aria-labelledby="copyFiles-tab"
-                  >
-                    <div class="copyFiles-content">
-                      <h4>
-                        You can enter up to 200 URLs, one URL per line
-                        <span>Max file size 1,000,000 MB</span>
-                      </h4>
-                      <textarea></textarea>
-                      <div class="bottom">
-                        <div>
-                          <input type="checkbox" id="tos" />
-                          <label for="tos"
-                            >I have read and agree to the
-                            <a href="#">TOS</a></label
-                          >
-                        </div>
-                        <a href="#" class="primary--btn">Start Upload</a>
+                    <div
+                      class="tab-pane fade"
+                      id="torrentLeach"
+                      role="tabpanel"
+                      aria-labelledby="torrentLeach-tab"
+                    >
+                      <div class="torrentLeach-content">
+                        <svg
+                          width="157"
+                          height="150"
+                          viewBox="0 0 157 150"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M45.7834 37.8321C48.1809 22.6239 66.1426 15.714 78.1146 25.3943L142.829 77.7212C154.801 87.4015 151.804 106.412 137.435 111.94L59.7612 141.82C45.3918 147.348 30.4268 135.248 32.8242 120.04L45.7834 37.8321Z"
+                            fill="url(#paint0_linear)"
+                            fill-opacity="0.04"
+                          />
+                          <defs>
+                            <linearGradient
+                              id="paint0_linear"
+                              x1="51.1776"
+                              y1="3.61361"
+                              x2="76.8148"
+                              y2="145.264"
+                              gradientUnits="userSpaceOnUse"
+                            >
+                              <stop stop-color="#173C73" />
+                              <stop offset="1" stop-color="#256EDA" />
+                            </linearGradient>
+                          </defs>
+                        </svg>
+                        <h3>
+                          Register on site to start using the Torrent Leech
+                          feature
+                        </h3>
+                        <a href="#" class="primary--btn">Register</a>
                       </div>
-                    </div>
-                  </div>
-                  <div
-                    class="tab-pane fade"
-                    id="torrentLeach"
-                    role="tabpanel"
-                    aria-labelledby="torrentLeach-tab"
-                  >
-                    <div class="torrentLeach-content">
-                      <svg
-                        width="157"
-                        height="150"
-                        viewBox="0 0 157 150"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M45.7834 37.8321C48.1809 22.6239 66.1426 15.714 78.1146 25.3943L142.829 77.7212C154.801 87.4015 151.804 106.412 137.435 111.94L59.7612 141.82C45.3918 147.348 30.4268 135.248 32.8242 120.04L45.7834 37.8321Z"
-                          fill="url(#paint0_linear)"
-                          fill-opacity="0.04"
-                        />
-                        <defs>
-                          <linearGradient
-                            id="paint0_linear"
-                            x1="51.1776"
-                            y1="3.61361"
-                            x2="76.8148"
-                            y2="145.264"
-                            gradientUnits="userSpaceOnUse"
-                          >
-                            <stop stop-color="#173C73" />
-                            <stop offset="1" stop-color="#256EDA" />
-                          </linearGradient>
-                        </defs>
-                      </svg>
-                      <h3>
-                        Register on site to start using the Torrent Leech
-                        feature
-                      </h3>
-                      <a href="#" class="primary--btn">Register</a>
                     </div>
                   </div>
                 </div>
