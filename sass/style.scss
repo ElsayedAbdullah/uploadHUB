@@ -18,6 +18,11 @@ body {
   @media #{$tablet} {
     background-color: #f9f9f9;
   }
+  &.login-body {
+    height: 100vh;
+    position: relative;
+    width: 100%;
+  }
 }
 
 body.overlay {
@@ -113,6 +118,11 @@ h4 {
       color: #256eda;
     }
   }
+  &.white {
+    > span {
+      color: #fff;
+    }
+  }
 }
 
 // Start Header Section
@@ -185,7 +195,9 @@ header {
     }
 
     .navbar-collapse {
-      flex: none;
+      @media (min-width: 992px) {
+        flex: none;
+      }
       @media #{$maxTab} {
         padding-top: 20px;
         flex-grow: 1;
@@ -258,6 +270,18 @@ header {
         margin-top: 25px;
         justify-content: space-between;
       }
+      li {
+        a {
+          &.active {
+            color: #256eda;
+            svg {
+              path {
+                stroke: #256eda;
+              }
+            }
+          }
+        }
+      }
     }
     .nav-item {
       &.make-money {
@@ -303,6 +327,122 @@ header {
             text-align: center;
             border-radius: 5px;
           }
+        }
+      }
+    }
+  }
+  &.login-header {
+    .navbar-nav .nav-item a {
+      color: #163665;
+      @media #{$tablet} {
+        color: #fff;
+        font-size: 16px;
+        width: 200px;
+      }
+      @media #{$mobile} {
+        color: #fff;
+        font-size: 16px;
+        width: 100%;
+      }
+    }
+    .navbar.navbar-show-mobile {
+      .toggler .bar1,
+      .toggler .bar2,
+      .toggler .bar3 {
+        @media #{$tablet} {
+          background-color: #fff;
+        }
+      }
+    }
+    .toggler .bar1,
+    .toggler .bar2,
+    .toggler .bar3 {
+      @media #{$tablet} {
+        background-color: #06172f;
+      }
+    }
+    &.register-header {
+      .toggler .bar1,
+      .toggler .bar2,
+      .toggler .bar3 {
+        @media #{$tablet} {
+          background-color: #fff;
+        }
+      }
+    }
+    .nav-fixed {
+      .toggler .bar1,
+      .toggler .bar2,
+      .toggler .bar3 {
+        @media #{$tablet} {
+          background-color: #fff;
+        }
+      }
+    }
+  }
+  .navbar-nav {
+    &.nav-links {
+      li {
+        margin-left: 35px;
+        @media #{$betweentabdesk} {
+          margin-left: 25px;
+        }
+        @media #{$maxTab} {
+          margin-left: 0;
+        }
+      }
+    }
+    @media #{$mobile} {
+      &.login-btns {
+        li {
+          width: 48%;
+        }
+      }
+    }
+
+    .nav-item {
+      a {
+        text-transform: uppercase;
+        @media #{$betweentabdesk} {
+          font-size: 16px;
+        }
+        svg {
+          margin-right: 6px;
+          position: relative;
+          top: -2px;
+          @media #{$maxTab} {
+            &.register-icon {
+              path {
+                stroke: #fff;
+              }
+            }
+          }
+        }
+      }
+      @media #{$mobile} {
+        &.make-money {
+          border-top: 1px solid rgba(44, 82, 198, 0.2);
+          border-bottom: 1px solid rgba(44, 82, 198, 0.2);
+          margin-left: 0;
+          &:last-of-type {
+            border-top: 0;
+            border-bottom: 1px solid rgba(44, 82, 198, 0.2);
+          }
+        }
+      }
+    }
+    .nav-item a.login-btn {
+      margin-right: 35px;
+      margin-left: 35px;
+      @media #{$betweentabdesk} {
+        width: auto;
+      }
+      @media #{$maxTab} {
+        margin: 0;
+      }
+      @media #{$maxTab} {
+        &.register-page {
+          color: #163665;
         }
       }
     }
@@ -1316,16 +1456,29 @@ footer {
   display: none;
 }
 .select2-container {
-  width: 100% !important;
+  display: block;
+  width: auto !important;
 }
 .select2-container--default .select2-selection--single {
   height: 100%;
   outline: none;
+  border: 0.2px solid #ccc;
 }
 .select2-container--default
   .select2-selection--single
   .select2-selection__rendered {
   line-height: 46px;
+}
+
+.register-form {
+  .select2-container--default
+    .select2-selection--single
+    .select2-selection__rendered {
+    line-height: 60px;
+    @media #{$maxTab} {
+      line-height: 50px;
+    }
+  }
 }
 .select2-container--default
   .select2-selection--single
@@ -1604,6 +1757,399 @@ footer {
           height: 50px;
           line-height: 50px;
         }
+      }
+    }
+  }
+}
+
+// login page
+
+body.login-body {
+  &:after {
+    content: "";
+    position: absolute;
+    width: 43%;
+    height: 100vh;
+    z-index: -1;
+    background: #06172f;
+    top: 0;
+    padding: 0;
+    @media #{$mobile} {
+      display: none;
+    }
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 50%;
+    bottom: 0;
+    z-index: 0;
+    background: url(../imgs/login-shapes.png);
+    background-size: cover;
+    height: 63%;
+    @media #{$mobile} {
+      display: none;
+    }
+    @media #{$tablet} {
+      width: 43%;
+    }
+    @media #{$betweentabdesk} {
+      width: 43%;
+    }
+  }
+  &.register-body {
+    @media #{$tablet} {
+      &:after,
+      &:before {
+        width: 100%;
+      }
+      &:after {
+        background: linear-gradient(162.01deg, #163665 3.01%, #06172f 101.28%);
+      }
+    }
+  }
+}
+.login-overlay {
+  position: relative;
+  padding: 0;
+  @media #{$maxTab} {
+    max-width: 100%;
+  }
+  @media #{$mobile} {
+    padding-bottom: 60px;
+  }
+
+  .overlay {
+    position: absolute;
+    left: 0;
+    width: 510px;
+    top: 0;
+    z-index: -1;
+    height: 100%;
+    background: #06172f;
+    @media #{$betweentabdesk} {
+      width: 450px;
+    }
+    &.register-page {
+      @media #{$betweentabdesk} {
+        display: none;
+      }
+      @media #{$mobile} {
+        bottom: 820px;
+      }
+    }
+
+    @media #{$tablet} {
+      display: none;
+    }
+    @media #{$mobile} {
+      background: linear-gradient(162.01deg, #163665 3.01%, #06172f 101.28%);
+      width: 100%;
+      height: auto;
+      bottom: 300px;
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        top: 75px;
+        z-index: 0;
+        background: url(../imgs/login-shapes.png);
+        background-size: cover;
+        height: 70%;
+      }
+    }
+  }
+}
+
+.login-content {
+  height: calc(100vh - 108px);
+  display: flex;
+  position: relative;
+  bottom: 40px;
+  &.register-page {
+    @media #{$tablet} {
+      height: auto;
+      padding: 160px 0 60px;
+    }
+  }
+  @media #{$tablet} {
+    bottom: 0;
+    height: 100vh;
+  }
+  @media #{$mobile} {
+    padding-top: 130px;
+    height: auto;
+    position: static;
+  }
+
+  .register,
+  .join {
+    h1 {
+      font-weight: bold;
+      font-size: 60px;
+      line-height: 119.7%;
+      color: #ffffff;
+      @media #{$betweentabdesk} {
+        font-size: 50px;
+      }
+      @media #{$tablet} {
+        font-size: 39px;
+      }
+      @media #{$mobile} {
+        font-size: 32px;
+      }
+    }
+    .text {
+      max-width: 270px;
+      font-size: 14px;
+      line-height: 140%;
+      margin: 17px 0 54px;
+      color: rgba(255, 255, 255, 0.6);
+      @media #{$mobile} {
+        font-size: 12px;
+        margin: 10px 0 32px;
+        max-width: 225px;
+      }
+    }
+    .have-account {
+      font-family: "Overpass", sans-serif;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 140%;
+      color: #ffffff;
+    }
+    .register-btn {
+      border: 1px solid #ffffff;
+      border-radius: 5px;
+      width: 205px;
+      height: 60px;
+      line-height: 60px;
+      color: #fff;
+      display: inline-block;
+      text-align: center;
+      font-weight: bold;
+      font-size: 20px;
+      @media #{$tablet} {
+        font-size: 18px;
+        height: 50px;
+        line-height: 50px;
+      }
+    }
+  }
+  .join {
+    .text {
+      max-width: 325px;
+    }
+    @media #{$tablet} {
+      text-align: center;
+      margin-bottom: 50px;
+      .text {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .register-btn {
+        margin: auto;
+      }
+    }
+  }
+  .login,
+  .register-content {
+    @media #{$mobile} {
+      background: #ffffff;
+      box-shadow: 0px 4px 26px rgba(33, 83, 212, 0.2);
+      border-radius: 15px;
+      padding: 32px 20px 55px;
+    }
+    .login-form {
+      .form-group {
+        margin-bottom: 38px;
+        @media #{$betweentabdesk} {
+          margin-bottom: 25px;
+        }
+        @media #{$maxTab} {
+          margin-bottom: 20px;
+        }
+        label {
+          font-family: "Overpass", sans-serif;
+          font-size: 16px;
+          line-height: 104%;
+          color: #333333;
+          margin-bottom: 18px;
+          @media #{$maxTab} {
+            font-size: 14px;
+            margin-bottom: 12px;
+          }
+        }
+        input {
+          border: 0.2px solid #ccc;
+          border-radius: 3px;
+          width: 100%;
+          font-family: "Overpass", sans-serif;
+          font-size: 14px;
+          height: 60px;
+          line-height: 60px;
+          color: #333333;
+          padding-left: 24px;
+          outline: none;
+          @media #{$maxTab} {
+            font-size: 12px;
+            height: 50px;
+            line-height: 50px;
+          }
+          &::placeholder {
+            color: rgba(51, 51, 51, 0.4);
+            @media #{$mobile} {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+      .forgot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @media #{$mobile} {
+          flex-direction: column;
+        }
+        a {
+          font-family: "Overpass", sans-serif;
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 28px;
+          color: #333333;
+          @media #{$tablet} {
+            font-size: 16px;
+          }
+          @media #{$mobile} {
+            font-size: 16px;
+            line-height: 25px;
+            margin: 10px 0 25px;
+          }
+        }
+        button {
+          border: 0;
+          width: 205px;
+          height: 60px;
+          line-height: 60px;
+          padding: 0;
+
+          @media #{$maxTab} {
+            display: block;
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            font-size: 16px;
+            @media #{$tablet} {
+              display: inline-block;
+              width: 150px;
+            }
+          }
+        }
+      }
+    }
+    .register-info {
+      text-align: center;
+      p {
+        font-family: "Overpass", sans-serif;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 140%;
+        color: #173c73;
+        margin: 30px 0 10px;
+      }
+      .register-btn {
+        border-radius: 5px;
+        border: 1px solid #163665;
+        height: 50px;
+        line-height: 50px;
+        font-family: "Overpass", sans-serif;
+        font-weight: bold;
+        font-size: 18px;
+        text-align: center;
+        color: #173c73;
+        display: block;
+      }
+    }
+  }
+  .register-content {
+    @media #{$tablet} {
+      background: #ffffff;
+      box-shadow: 0px 4px 26px rgba(33, 83, 212, 0.2);
+      border-radius: 15px;
+      padding: 32px 20px 55px;
+    }
+  }
+}
+// register page
+.register-content {
+  .register-form {
+    .form-group {
+      margin-bottom: 25px;
+      label {
+        font-family: "Overpass", sans-serif;
+        font-size: 16px;
+        line-height: 104%;
+        color: #333333;
+        margin-bottom: 13px;
+      }
+      input,
+      select,
+      button {
+        width: 100%;
+        display: block;
+        border: 0.2px solid #ccc;
+        border-radius: 3px;
+        height: 60px;
+        line-height: 60px;
+        padding: 0 20px;
+        @media #{$maxTab} {
+          height: 50px;
+          line-height: 50px;
+        }
+      }
+      input {
+        outline: none;
+        font-size: 14px;
+        &::placeholder {
+          font-size: 14px;
+          color: rgba(51, 51, 51, 0.4);
+        }
+      }
+    }
+    .verification {
+      display: flex;
+      border: 0.2px solid #ccc;
+      border-radius: 3px;
+      height: 60px;
+      line-height: 60px;
+      overflow: hidden;
+      img {
+        display: block;
+      }
+      @media #{$maxTab} {
+        height: 50px;
+        line-height: 50px;
+        .code {
+          img {
+            height: 50px;
+          }
+        }
+      }
+
+      input {
+        border: 0;
+        border-left: 0.2px solid #ccc;
+        border-radius: 0 3px 3px 0;
+      }
+    }
+    .last {
+      display: flex;
+      > div {
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
       }
     }
   }

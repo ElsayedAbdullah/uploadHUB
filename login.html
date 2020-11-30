@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Overpass:wght@600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="login-body">
+    <div class="container login-overlay">
+      <div class="overlay"></div>
+
+      <!-- Start Header -->
+      <header class="login-header">
+        <nav class="navbar navbar-expand-lg sticky-top navbar-light">
+          <div class="container">
+            <a class="logo white" href="index.html">
+              <span>upload<span>hub</span></span>
+            </a>
+            <div
+              class="toggler"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+            >
+              <div class="bar1"></div>
+              <div class="bar2"></div>
+              <div class="bar3"></div>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav nav-links">
+                <li class="nav-item make-money">
+                  <a href="#">Home</a>
+                </li>
+                <li class="nav-item make-money">
+                  <a href="#">Make Money</a>
+                </li>
+              </ul>
+              <ul class="navbar-nav login-btns">
+                <li class="nav-item">
+                  <a href="login.html" class="login-btn active">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M14 12H4"
+                        stroke="#163665"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M14 12L10 16"
+                        stroke="#163665"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M14 12L10 8"
+                        stroke="#163665"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M20 4V20"
+                        stroke="#163665"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+
+                    <span>Login</span></a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a href="register.html" class="register">
+                    <svg
+                      class="register-icon"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z"
+                        stroke="#163665"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M3 21V19C3 17.9391 3.42143 16.9217 4.17157 16.1716C4.92172 15.4214 5.93913 15 7 15H11C12.0609 15 13.0783 15.4214 13.8284 16.1716C14.5786 16.9217 15 17.9391 15 19V21"
+                        stroke="#163665"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M19 8V14M16 11H22H16Z"
+                        stroke="#163665"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+
+                    <span>Register</span></a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <!-- End Header -->
+
+      <div class="login-content">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-5 col-lg-6">
+              <div class="register">
+                <h1>Welcome back!</h1>
+                <p class="text">
+                  Login to your account and see how much you made already.
+                </p>
+                <p class="have-account d-none d-md-block">
+                  Didn’t have account yet?
+                </p>
+                <a href="register.html" class="register-btn d-none d-md-block"
+                  >Register</a
+                >
+              </div>
+            </div>
+            <div class="col-md-6 ml-md-auto col-lg-6">
+              <div class="login">
+                <form class="login-form">
+                  <div class="form-group">
+                    <label for="">Username</label>
+                    <input type="text" placeholder="Enter user name" />
+                  </div>
+                  <div class="form-group">
+                    <label for="">Password</label>
+                    <input type="text" placeholder="Enter password" />
+                  </div>
+                  <div class="forgot">
+                    <a href="#">Forgot Password</a>
+                    <button type="submit" class="primary--btn">Login</button>
+                  </div>
+                </form>
+                <div class="register-info d-block d-md-none">
+                  <p>Didn’t have account yet?</p>
+                  <a href="register.html" class="register-btn">Register</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
