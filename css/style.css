@@ -2179,7 +2179,7 @@ body.login-body:after {
   width: 43%;
   height: 100vh;
   z-index: -1;
-  background: #06172f;
+  background: #13305c;
   top: 0;
   padding: 0;
 }
@@ -2253,7 +2253,7 @@ body.login-body:before {
   top: 0;
   z-index: -1;
   height: 100%;
-  background: #06172f;
+  background: #13305c;
 }
 
 @media (min-width: 1000px) and (max-width: 1200px) {

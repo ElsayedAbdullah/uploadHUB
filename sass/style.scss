@@ -1771,7 +1771,7 @@ body.login-body {
     width: 43%;
     height: 100vh;
     z-index: -1;
-    background: #06172f;
+    background: rgb(19, 48, 92);
     top: 0;
     padding: 0;
     @media #{$mobile} {
@@ -1827,7 +1827,7 @@ body.login-body {
     top: 0;
     z-index: -1;
     height: 100%;
-    background: #06172f;
+    background: rgb(19, 48, 92);
     @media #{$betweentabdesk} {
       width: 450px;
     }
